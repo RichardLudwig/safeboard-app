@@ -3,7 +3,7 @@
     "name": "safeBoard",
     "slug": "safeBoard",
     "description": "react-native soundboard app for people walking in unsafe areas at night",
-    "scheme": "safeBoard",
+    "scheme": "safeboard",
     "slug": "safeBoard",
     "privacy": "public",
     "sdkVersion": "35.0.0",
