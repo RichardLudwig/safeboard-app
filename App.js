@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Linking, Platform } from 'react-native';
 import { Audio } from 'expo-av';
 
 import {
@@ -14,8 +14,7 @@ const buttonSounds = {
   defconFive: require('./assets/audio/defconFive.mp3'),
   defconFour: require('./assets/audio/defconFour.mp3'),
   defconThree: require('./assets/audio/defconThree.mp3'),
-  defconTwo: require('./assets/audio/defconTwo.mp3'),
-  defconOne: require('./assets/audio/defconOne.mp3')
+  defconTwo: require('./assets/audio/defconTwo.mp3')
 }
 
 export default function App() {
@@ -38,6 +37,14 @@ export default function App() {
       console.log(error);
     }
   }
+
+  emergencyCall = () => {
+    // android settings
+    // enter emergency phone number after $ symbol
+    let phoneNumber = 'tel:$';
+
+    Linking.openURL(phoneNumber);
+  };
 
   return (
     <View style={styles.container}>
@@ -76,9 +83,10 @@ export default function App() {
       <View style={styles.buttonContainer}>
     		<TouchableOpacity
     			style={[styles.button, { backgroundColor: DefconOneButton }]}
-    			onPress={() => this.handleAudioSound('defconOne')}
+    			// onPress={() => this.handleAudioSound('defconOne')}
+          onPress={this.emergencyCall} activityOpacity={0.7}
     		>
-    			<Text style={styles.buttonText}>911</Text>
+    			<Text style={styles.buttonText}>Speed Dial</Text>
     		</TouchableOpacity>
     	</View>
 </View>
@@ -88,6 +96,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 10,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
