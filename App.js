@@ -65,7 +65,7 @@ export default function App() {
               style={[styles.buttonInner, { backgroundColor: DefconFourButton }]}
               onPress={() => this.handleAudioSound('defconFour')}
             >
-              <Text style={styles.buttonText}>I have a fiance!</Text>
+              <Text style={styles.buttonText}>I have a fiancé!</Text>
             </TouchableOpacity>
           </View>
         </View>
