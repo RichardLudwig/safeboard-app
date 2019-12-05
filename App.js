@@ -48,70 +48,109 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-    	<View style={styles.buttonContainer}>
-    		<TouchableOpacity
-    			style={[styles.button, { backgroundColor: DefconFiveButton }]}
-    			onPress={() => this.handleAudioSound('defconFive')}
-    		>
-    			<Text style={styles.buttonText}>Leave me alone!</Text>
-    		</TouchableOpacity>
-    	</View>
       <View style={styles.buttonContainer}>
-    		<TouchableOpacity
-    			style={[styles.button, { backgroundColor: DefconFourButton }]}
-    			onPress={() => this.handleAudioSound('defconFour')}
-    		>
-    			<Text style={styles.buttonText}>I have a fiance!</Text>
-    		</TouchableOpacity>
-    	</View>
-      <View style={styles.buttonContainer}>
-    		<TouchableOpacity
-    			style={[styles.button, { backgroundColor: DefconThreeButton }]}
-    			onPress={() => this.handleAudioSound('defconThree')}
-    		>
-    			<Text style={styles.buttonText}>My dad's a cop!</Text>
-    		</TouchableOpacity>
-    	</View>
-      <View style={styles.buttonContainer}>
-    		<TouchableOpacity
-    			style={[styles.button, { backgroundColor: DefconTwoButton }]}
-    			onPress={() => this.handleAudioSound('defconTwo')}
-    		>
-    			<Text style={styles.buttonText}>HELP!</Text>
-    		</TouchableOpacity>
-    	</View>
-      <View style={styles.buttonContainer}>
-    		<TouchableOpacity
-    			style={[styles.button, { backgroundColor: DefconOneButton }]}
-    			// onPress={() => this.handleAudioSound('defconOne')}
-          onPress={this.emergencyCall} activityOpacity={0.7}
-    		>
-    			<Text style={styles.buttonText}>Speed Dial</Text>
-    		</TouchableOpacity>
-    	</View>
-</View>
+        <View style={styles.button}>
+          <View style={styles.buttonInner}>
+            <TouchableOpacity
+              style={[styles.buttonInner, { backgroundColor: DefconFiveButton }]}
+              onPress={() => this.handleAudioSound('defconFive')}
+            >
+              <Text style={styles.buttonText}>Leave me alone!</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.button}>
+          <View style={styles.buttonInner}>
+            <TouchableOpacity
+              style={[styles.buttonInner, { backgroundColor: DefconFourButton }]}
+              onPress={() => this.handleAudioSound('defconFour')}
+            >
+              <Text style={styles.buttonText}>I have a fiance!</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.button}>
+          <View style={styles.buttonInner}>
+            <TouchableOpacity
+              style={[styles.buttonInner, { backgroundColor: DefconThreeButton }]}
+              onPress={() => this.handleAudioSound('defconThree')}
+            >
+              <Text style={styles.buttonText}>My dad's a cop!</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.button}>
+          <View style={styles.buttonInner}>
+            <TouchableOpacity
+              style={[styles.buttonInner, { backgroundColor: DefconTwoButton }]}
+              onPress={() => this.handleAudioSound('defconTwo')}
+            >
+              <Text style={styles.buttonText}>HELP!</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={[styles.buttonBottom, { backgroundColor: DefconOneButton }]}
+            onPress={this.emergencyCall} activityOpacity={0.7}
+          >
+            <Text style={styles.buttonBottomText}>ACCESS PHONE!</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 10,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: Expo.Constants.statusBarHeight
   },
   buttonContainer: {
-    flex: 1,
+    height: '100%',
+    backgroundColor: '#292929',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    flexWrap: 'wrap',
+    padding: 5
   },
+  // generic button style
   button: {
-    margin: 5,
-    height: '20%',
+    width: '50%',
+    height: '40%',
+    padding: 5
   },
+  // button style for all but bottom buttons
+  buttonInner: {
+    flex: 1,
+    backgroundColor: '#d3d3d3'
+  },
+  // button style for bottom
+  buttonBottom: {
+    width: '100%',
+    height: '40%',
+    padding: 5
+  },
+  // text style for all but bottom buttons
   buttonText: {
     color: 'black',
-    fontSize: 20
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 30,
+    marginTop: '40%',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  // text style for bottom button
+  buttonBottomText: {
+    color: 'black',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: 40,
+    marginTop: '5%',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
