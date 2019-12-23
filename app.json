@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "safeBoard",
-    "slug": "safeBoard",
+    "name": "safeboard",
+    "slug": "safeboard",
     "description": "react-native soundboard app for people walking in unsafe areas at night",
     "scheme": "safeboard",
-    "slug": "safeBoard",
+    "slug": "safeboard",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
@@ -13,7 +13,7 @@
       "web"
     ],
     "version": "1.0.0",
-    "githubUrl": "https://github.com/RichardLudwig/safeBoard",
+    "githubUrl": "https://github.com/RichardLudwig/safeboard",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -27,8 +27,8 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
+    "android": {
+      "package": "com.richardludwig.safeboard"
     }
   }
 }
